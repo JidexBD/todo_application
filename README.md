@@ -1,3 +1,3 @@
 # todo_application
 
-A new Flutter project.
+A Todo List Application.
