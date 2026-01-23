@@ -11,6 +11,7 @@ class TodoPage extends StatefulWidget {
 }
 
 class _TodoPageState extends State<TodoPage> {
+  final _controller = TextEditingController();
   List toDoList = [
     ['learn to make app', false],
     ['start Practice', false],
@@ -22,12 +23,25 @@ class _TodoPageState extends State<TodoPage> {
     });
   }
 
+  // save new task
+  void saveNewTask() {
+    setState(() {
+      toDoList.add([_controller.text, false]);
+      _controller.clear();
+    });
+    Navigator.of(context).pop();
+  }
+
   // function for creating new tasks
   void createNewTask() {
     showDialog(
       context: context,
       builder: (context) {
-        return DialogBox();
+        return DialogBox(
+          controller: _controller,
+          onSaved: saveNewTask,
+          onCancel: () => Navigator.of(context).pop(),
+        );
       },
     );
   }
