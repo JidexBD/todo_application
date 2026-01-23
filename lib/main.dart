@@ -15,7 +15,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.black45,
+          brightness: Brightness.dark,
+        ),
       ),
       home: TodoPage(),
       routes: {
