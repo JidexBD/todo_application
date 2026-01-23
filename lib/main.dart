@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:todo_application/pages/notes_page.dart';
+import 'package:todo_application/pages/settings_page.dart';
+import 'package:todo_application/pages/todo_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +12,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
       ),
+      home: TodoPage(),
+      routes: {
+        '/TodoPage': (context) => TodoPage(),
+        '/NotesPage': (context) => NotesPage(),
+        '/SettingsPage': (context) => SettingsPage(),
+      },
     );
   }
 }
