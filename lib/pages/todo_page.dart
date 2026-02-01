@@ -47,6 +47,7 @@ class _TodoPageState extends State<TodoPage> {
     );
   }
 
+  // function for deleting new task
   void deleteTask(int index) {
     setState(() {
       toDoList.removeAt(index);
