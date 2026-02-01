@@ -16,6 +16,7 @@ class _TodoPageState extends State<TodoPage> {
     ['learn to make app', false],
     ['start Practice', false],
   ];
+
   // check box
   void checkBoxChanged(bool? value, int index) {
     setState(() {
