@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_application/widgets/notes_widgets/note_tile.dart';
-import 'package:todo_application/widgets/todo_widgets/dialog_box.dart';
+import 'package:todo_application/widgets/notes_widgets/dialog_box.dart';
 
 class NotesPage extends StatefulWidget {
   const NotesPage({super.key});
