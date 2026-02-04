@@ -19,9 +19,9 @@ class DialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.grey[850],
       content: Container(
-        height: 200,
+        height: 300,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -30,13 +30,23 @@ class DialogBox extends StatelessWidget {
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: " add note title",
+                hintStyle: TextStyle(
+                  color: const Color.fromARGB(62, 255, 255, 255),
+                ),
+                labelStyle: TextStyle(color: Colors.white),
               ),
             ),
+            SizedBox(height: 5),
             TextField(
+              maxLines: 5,
               controller: contentController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: " add note content",
+                hintStyle: TextStyle(
+                  color: const Color.fromARGB(75, 255, 255, 255),
+                ),
+                labelStyle: TextStyle(color: Colors.white),
               ),
             ),
             SizedBox(height: 20),

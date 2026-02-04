@@ -9,6 +9,9 @@ class MyButton extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       color: Colors.black87,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusGeometry.circular(10),
+      ),
       child: Text(text, style: TextStyle(color: Colors.white)),
     );
   }

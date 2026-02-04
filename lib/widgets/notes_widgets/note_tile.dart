@@ -30,7 +30,7 @@ class NoteTile extends StatelessWidget {
           ],
         ),
         child: Container(
-          alignment: Alignment.topLeft,
+          alignment: Alignment.center,
           padding: const EdgeInsets.all(25.0),
           decoration: BoxDecoration(
             color: Colors.black87,
