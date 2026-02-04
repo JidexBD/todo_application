@@ -19,14 +19,16 @@ class _NotesPageState extends State<NotesPage> {
   ];
 
   // text controller
-  final _controller = TextEditingController();
+  final _titleController = TextEditingController();
+  final _contentController = TextEditingController();
 
   // save
   saveNewNote() {
     setState(() {
-      notesList.add([_controller.text, _controller.text]);
+      notesList.add([_titleController.text, _contentController.text]);
     });
-    _controller.clear();
+    _titleController.clear();
+    _contentController.clear();
     Navigator.of(context).pop();
   }
 
@@ -36,7 +38,8 @@ class _NotesPageState extends State<NotesPage> {
       context: context,
       builder: (context) {
         return DialogBox(
-          controller: _controller,
+          titleController: _titleController,
+          contentController: _contentController,
           onSave: saveNewNote,
           onCancel: () => Navigator.of(context).pop(),
         );
