@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_application/widgets/notes_widgets/note_tile.dart';
+import 'package:todo_application/widgets/todo_widgets/dialog_box.dart';
 
 class NotesPage extends StatefulWidget {
   const NotesPage({super.key});
@@ -17,13 +18,31 @@ class _NotesPageState extends State<NotesPage> {
     ["Tower born children ", "A study on the tower born irregular childrens"],
   ];
 
+  // text controller
+  final _controller = TextEditingController();
+
+  // save
+  saveNewNote() {
+    setState(() {
+      notesList.add([_controller, _controller]);
+    });
+    Navigator.of(context).pop();
+  }
+
   // newNote
   void createNewNote() {
-    context: context,
-    Builder: (context){
-      
-    }
+    showDialog(
+      context: context,
+      builder: (context) {
+        return DialogBox(
+          controller: _controller,
+          onSaved: saveNewNote,
+          onCancel: () => Navigator.of(context).pop(),
+        );
+      },
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +62,8 @@ class _NotesPageState extends State<NotesPage> {
           );
         },
       ),
+
+      // FAB
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
