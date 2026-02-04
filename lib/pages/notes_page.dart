@@ -37,7 +37,7 @@ class _NotesPageState extends State<NotesPage> {
       builder: (context) {
         return DialogBox(
           controller: _controller,
-          onSaved: saveNewNote,
+          onSave: saveNewNote,
           onCancel: () => Navigator.of(context).pop(),
         );
       },

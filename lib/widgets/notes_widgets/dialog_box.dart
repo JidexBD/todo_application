@@ -4,12 +4,12 @@ import 'package:todo_application/widgets/notes_widgets/note_button.dart';
 class DialogBox extends StatelessWidget {
   DialogBox({
     super.key,
-    required this.contoller,
+    required this.controller,
     required this.onCancel,
     required this.onSave,
   });
 
-  final contoller;
+  final controller;
   VoidCallback onSave;
   VoidCallback onCancel;
 
@@ -23,14 +23,14 @@ class DialogBox extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
-              controller: contoller,
+              controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: " add note title",
               ),
             ),
             TextField(
-              controller: contoller,
+              controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: " add note content",
