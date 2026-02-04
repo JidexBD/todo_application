@@ -24,8 +24,9 @@ class _NotesPageState extends State<NotesPage> {
   // save
   saveNewNote() {
     setState(() {
-      notesList.add([_controller, _controller]);
+      notesList.add([_controller.text, _controller.text]);
     });
+    _controller.clear();
     Navigator.of(context).pop();
   }
 
@@ -41,6 +42,13 @@ class _NotesPageState extends State<NotesPage> {
         );
       },
     );
+  }
+
+  // delete note
+  void deleteNote(int index) {
+    setState(() {
+      notesList.removeAt(index);
+    });
   }
 
   @override
@@ -59,6 +67,7 @@ class _NotesPageState extends State<NotesPage> {
           return NoteTile(
             noteTitle: notesList[index][0],
             noteContent: notesList[index][1],
+            deleteFunc: (context) => deleteNote(index),
           );
         },
       ),
